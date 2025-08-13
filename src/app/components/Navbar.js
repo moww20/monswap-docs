@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { createPortal } from "react-dom"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import ConnectButton from "./ConnectButton"
+// Connect button removed from header per request
 import SearchBar from "./SearchBar"
 
 export default function Navbar() {
@@ -42,21 +42,12 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4 grid grid-cols-3 items-center">
         <div className="flex items-center gap-6">
           <Link href="/" className="text-lg tracking-tight font-semibold text-accent-gradient">monswap</Link>
-          <nav className="flex items-center gap-2">
-            <Link href="/trade" className={`${linkClass('/trade')} max-[559px]:hidden`}>Trade</Link>
-            <Link href="/pools" className={`${linkClass('/pools')} max-[767px]:hidden`}>Pools</Link>
-            <Link href="/dashboard" className={`${linkClass('/dashboard')} max-[1023px]:hidden`}>Dashboard</Link>
-            <Link href="/vote" className={`${linkClass('/vote')} max-[1279px]:hidden`}>Vote</Link>
-          </nav>
         </div>
         <div className="flex items-center justify-center">
           <SearchBar />
         </div>
         <div className="flex items-center justify-end gap-6">
           <Link href="/docs" className={`${linkClass('/docs')} max-[519px]:hidden`}>Docs</Link>
-          <div className="hidden lg:block">
-            <ConnectButton />
-          </div>
           <button
             type="button"
             aria-label="Open menu"
@@ -103,14 +94,7 @@ export default function Navbar() {
                     </button>
                   </div>
                   <div className="grid gap-2">
-                    <Link href="/trade" className={linkClass('/trade')}>Trade</Link>
-                    <Link href="/pools" className={linkClass('/pools')}>Pools</Link>
-                    <Link href="/dashboard" className={linkClass('/dashboard')}>Dashboard</Link>
-                    <Link href="/vote" className={linkClass('/vote')}>Vote</Link>
                     <Link href="/docs" className={linkClass('/docs')}>Docs</Link>
-                    <div className="pt-2">
-                      <ConnectButton />
-                    </div>
                   </div>
                 </motion.div>
               </>

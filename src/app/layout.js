@@ -3,7 +3,7 @@ import AppKitProvider from "./providers/AppKitProvider";
 import Navbar from "./components/Navbar";
 
 export const metadata = {
-  title: "MONSWAP",
+  title: "monswap-docs",
   description: "A premium, high‑performance decentralized exchange for the Monad ecosystem.",
   icons: {
     icon: "/mon-2.svg",

@@ -27,7 +27,7 @@ export default function DocsShell({ children }) {
       <div className="flex gap-8">
         <div className="hidden xl:block sticky top-[9rem] self-start max-h-[calc(100vh-9rem)] overflow-auto"><DocsSidebar /></div>
         <div className="flex-1 min-w-0">
-          <div className="xl:hidden mb-4">
+          <div className="xl:hidden mb-4 hidden">
             <button className="px-3 py-2 rounded-full hairline hover:bg-white/5" onClick={() => setMobileOpen(true)}>Docs menu</button>
           </div>
           <Breadcrumbs />

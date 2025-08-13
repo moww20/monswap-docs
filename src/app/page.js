@@ -1,5 +1,5 @@
-import SplashPage from "./components/SplashPage";
+import { redirect } from "next/navigation"
 
 export default function Home() {
-  return <SplashPage />;
+  redirect("/docs")
 }
