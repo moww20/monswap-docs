@@ -30,6 +30,10 @@ html, body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* Prevent horizontal layout shift when page toggles vertical scrollbar */
+  overflow-y: scroll; /* fallback for browsers without scrollbar-gutter */
+  /* Reserve space for vertical scrollbar to prevent layout shift when it appears */
+  scrollbar-gutter: stable both-edges;
 }
 
 ::selection {
@@ -103,6 +107,29 @@ body {
 .docs-prose ol { margin: 0.75rem 0 0.75rem 1.25rem; list-style: decimal; padding-left: 1.25rem; }
 .docs-prose li { margin: 0.25rem 0; }
 .docs-prose li::marker { color: var(--color-muted); }
+
+/* Subtle vertical scrollbar styling for dark UI */
+.scroll-y-subtle {
+  scrollbar-gutter: stable; /* reserve gutter so layout doesn't shift when scrollbar appears */
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: rgba(255,255,255,0.22) transparent; /* thumb, track */
+}
+.scroll-y-subtle::-webkit-scrollbar {
+  width: 10px;
+}
+.scroll-y-subtle::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scroll-y-subtle::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.22);
+  border-radius: 8px;
+  background-clip: content-box;
+  border: 2px solid transparent; /* creates inset spacing */
+}
+.scroll-y-subtle::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255,255,255,0.3);
+}
+.scroll-y-subtle::-webkit-scrollbar-corner { background: transparent; }
 
 /* Docs: heading hierarchy and spacing */
 .docs-prose h2 {

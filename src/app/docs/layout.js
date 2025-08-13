@@ -24,7 +24,7 @@ export const metadata = {
 
 export default function DocsLayout({ children }) {
   return (
-    <main className="min-h-[80vh] max-w-7xl mx-auto px-6 py-16" role="main">
+    <main className="min-h-[80vh] max-w-7xl mx-auto px-6 py-10" role="main">
       <DocsShell>{children}</DocsShell>
     </main>
   )

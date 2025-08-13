@@ -25,6 +25,14 @@ export const docsItems = [
     ],
   },
   {
+    label: "Brand",
+    children: [
+      { href: "/docs/assets", label: "Assets", description: "Downloadable logos and visual assets." },
+      { href: "/docs/brand-guides", label: "Brand Guides", description: "Usage, colors, spacing, and do/don'ts." },
+      { href: "/docs/logo", label: "Logo", description: "Logo formats, clearspace, and sizing guidance." },
+    ],
+  },
+  {
     label: "Tutorials",
     children: [
       { href: "/docs/tutorials/swaps", label: "Swap Tutorial", description: "How to perform a swap on Monswap." },

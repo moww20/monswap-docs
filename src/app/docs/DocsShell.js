@@ -22,10 +22,9 @@ export default function DocsShell({ children }) {
 
   return (
     <div>
-      <a href="#docs-main" className="fixed left-2 -top-10 focus:top-2 z-[100] px-3 py-2 rounded-full bg-white/10 backdrop-blur hairline">Skip to content</a>
       <ScrollRestorer />
       <div className="flex gap-8">
-        <div className="hidden xl:block sticky top-[9rem] self-start max-h-[calc(100vh-9rem)] overflow-auto"><DocsSidebar /></div>
+        <div className="hidden xl:block sticky top-[7.5rem] self-start max-h-[calc(100vh-7.5rem)] overflow-auto scroll-y-subtle"><DocsSidebar /></div>
         <div className="flex-1 min-w-0">
           <div className="xl:hidden mb-4 hidden">
             <button className="px-3 py-2 rounded-full hairline hover:bg-white/5" onClick={() => setMobileOpen(true)}>Docs menu</button>
@@ -39,13 +38,13 @@ export default function DocsShell({ children }) {
             <DocNav />
           </div>
         </div>
-        <div className="hidden xl:block sticky top-[9rem] self-start max-h-[calc(100vh-9rem)] overflow-auto"><RightToc /></div>
+        <div className="hidden xl:block sticky top-[7.5rem] self-start max-h-[calc(100vh-7.5rem)] overflow-auto scroll-y-subtle"><RightToc /></div>
       </div>
 
       {mobileOpen && (
         <div className="fixed inset-0 z-[90] xl:hidden">
           <button className="absolute inset-0 bg-black/50 backdrop-blur-sm" aria-label="Close" onClick={()=>setMobileOpen(false)} />
-          <div className="absolute left-0 top-0 bottom-0 w-72 max-w-[85vw] bg-[#0b0b0b] shadow-2xl hairline-r overflow-auto p-2">
+          <div className="absolute left-0 top-0 bottom-0 w-72 max-w-[85vw] bg-[#0b0b0b] shadow-2xl hairline-r overflow-auto scroll-y-subtle p-2">
             <DocsSidebar />
           </div>
         </div>

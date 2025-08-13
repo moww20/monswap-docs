@@ -41,7 +41,7 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 grid grid-cols-3 items-center">
         <div className="flex items-center gap-6">
-          <Link href="/" className="text-lg tracking-tight font-semibold text-accent-gradient">monswap</Link>
+          <Link href="https://monswap.app" className="text-lg tracking-tight font-semibold text-accent-gradient">monswap</Link>
         </div>
         <div className="flex items-center justify-center">
           <SearchBar />
