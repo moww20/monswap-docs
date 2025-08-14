@@ -8,7 +8,7 @@ import DemoAddLiquidity from "../../components/demos/DemoAddLiquidity"
 
 export default function AddLiquidityTutorialPage() {
   return (
-    <div className="glass hairline rounded-2xl p-6">
+    <div className="rounded-2xl p-6">
       <h1 className="text-2xl font-semibold tracking-tight mb-3">Add Liquidity</h1>
       <div className="docs-prose">
         <ol>
@@ -22,7 +22,7 @@ export default function AddLiquidityTutorialPage() {
           <DemoAddLiquidity />
         </div>
       </div>
-      <div className="border-t border-white/10 mt-8 pt-6"></div>
+      <div className="mt-8 pt-6"></div>
     </div>
   )
 }

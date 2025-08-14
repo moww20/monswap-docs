@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function VotingDocsPage() {
   return (
-    <div className="glass hairline rounded-2xl p-6">
+    <div className="rounded-2xl p-6">
       <h1 className="text-2xl font-semibold tracking-tight mb-3">Voting</h1>
       <div className="docs-prose">
         <p><em>Lock to gain vote power, direct emissions to pools, and earn aligned rewards on Monad.</em></p>
@@ -60,7 +60,7 @@ export default function VotingDocsPage() {
           <li>Voting rewards settle in the next epoch; your lock is represented by a veNFT.</li>
         </ul>
       </div>
-      <div className="border-t border-white/10 mt-8 pt-6"></div>
+      <div className="mt-8 pt-6"></div>
     </div>
   )
 }

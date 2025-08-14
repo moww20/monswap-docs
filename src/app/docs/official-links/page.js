@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function OfficialLinksPage() {
   return (
-    <div className="glass hairline rounded-2xl p-6">
+    <div className="rounded-2xl p-6">
       <h1 className="text-2xl font-semibold tracking-tight mb-3">Official Links</h1>
       <div className="docs-prose">
         <ul>
@@ -33,7 +33,7 @@ export default function OfficialLinksPage() {
           </li>
         </ul>
       </div>
-      <div className="border-t border-white/10 mt-8 pt-6"></div>
+      <div className="mt-8 pt-6"></div>
     </div>
   )
 }

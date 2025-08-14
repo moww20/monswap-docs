@@ -36,24 +36,22 @@ export default function RightToc() {
   if (headings.length === 0) return null
 
   return (
-    <aside className="w-64 max-xl:hidden">
-      <div className="sticky top-20">
-        <div className="mb-2 text-sm text-[--color-muted]">On this page</div>
-        <nav className="grid gap-1 text-sm">
-          {headings.map((h) => (
-            <a key={h.id} href={`#${h.id}`} className={`px-2 py-1 rounded-full hover:bg-white/5 ${active===h.id? 'bg-white/10' : ''}`}
-              onClick={(e) => {
-                e.preventDefault()
-                const el = document.getElementById(h.id)
-                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                history.replaceState(null, '', `#${h.id}`)
-                setActive(h.id)
-              }}
-            >{h.text}</a>
-          ))}
-        </nav>
-      </div>
-    </aside>
+    <div className="w-64 max-xl:hidden">
+      <div className="mb-2 text-sm text-[--color-muted]">On this page</div>
+      <nav className="grid gap-1 text-sm">
+        {headings.map((h) => (
+          <a key={h.id} href={`#${h.id}`} className={`px-2 py-1 rounded-full hover:bg-white/5 ${active===h.id? 'bg-white/10' : ''}`}
+            onClick={(e) => {
+              e.preventDefault()
+              const el = document.getElementById(h.id)
+              if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              history.replaceState(null, '', `#${h.id}`)
+              setActive(h.id)
+            }}
+          >{h.text}</a>
+        ))}
+      </nav>
+    </div>
   )
 }
 

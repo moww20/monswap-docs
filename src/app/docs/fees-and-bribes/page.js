@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function FeesAndBribesPage() {
   return (
-    <div className="glass hairline rounded-2xl p-6">
+    <div className="rounded-2xl p-6">
       <h1 className="text-2xl font-semibold tracking-tight mb-3">Fees and Bribes</h1>
       <div className="docs-prose">
         <p><em>How Monswap aligns incentives between traders, liquidity providers, and voters on Monad.</em></p>
@@ -67,7 +67,7 @@ export default function FeesAndBribesPage() {
           <li>Rebases help protect ve‑lock holders from dilution; they accrue and must be claimed.</li>
         </ul>
       </div>
-      <div className="border-t border-white/10 mt-8 pt-6"></div>
+      <div className="mt-8 pt-6"></div>
     </div>
   )
 }

@@ -6,11 +6,23 @@
   --foreground: #e6e6e6; /* soft white */
   --muted: #9aa0a6;      /* cool gray for secondary */
   --hairline: rgba(255,255,255,0.08);
+  --scrollbar-thumb: rgba(255,255,255,0.22);
+  --scrollbar-track: transparent;
   /* Red–Blue chrome accents */
   --accent-red: #ff5563;
   --accent-blue: #6aa8ff;
   --accent: var(--accent-blue);
   --accent-gradient: linear-gradient(90deg, var(--accent-red) 0%, var(--accent-blue) 100%);
+}
+
+/* Light theme variables override when [data-theme="light"] present on <html> */
+[data-theme="light"] {
+  --background: #f7f8fa;
+  --foreground: #0c0d10;
+  --muted: #6b7280;
+  --hairline: rgba(0,0,0,0.08);
+  --scrollbar-thumb: rgba(17,17,17,0.28);
+  --scrollbar-track: transparent;
 }
 
 @theme inline {
@@ -30,11 +42,24 @@ html, body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* Prevent horizontal layout shift when page toggles vertical scrollbar */
-  overflow-y: scroll; /* fallback for browsers without scrollbar-gutter */
-  /* Reserve space for vertical scrollbar to prevent layout shift when it appears */
-  scrollbar-gutter: stable both-edges;
+  /* Always show a vertical scrollbar area to avoid layout shift */
+  overflow-y: scroll;
 }
+
+/* Global scrollbar styling to avoid bright white vertical bar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+html::-webkit-scrollbar { width: 10px; }
+html::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+html::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 8px;
+  background-clip: content-box;
+  border: 2px solid transparent;
+}
+html::-webkit-scrollbar-thumb:hover { background-color: color-mix(in oklab, var(--scrollbar-thumb) 85%, transparent); }
 
 ::selection {
   background: color-mix(in oklab, var(--accent) 30%, transparent);
@@ -110,7 +135,6 @@ body {
 
 /* Subtle vertical scrollbar styling for dark UI */
 .scroll-y-subtle {
-  scrollbar-gutter: stable; /* reserve gutter so layout doesn't shift when scrollbar appears */
   scrollbar-width: thin; /* Firefox */
   scrollbar-color: rgba(255,255,255,0.22) transparent; /* thumb, track */
 }

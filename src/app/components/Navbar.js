@@ -7,6 +7,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 // Connect button removed from header per request
 import SearchBar from "./SearchBar"
+import ThemeToggle from "./ThemeToggle"
 
 export default function Navbar() {
   const pathname = usePathname()
@@ -47,6 +48,7 @@ export default function Navbar() {
           <SearchBar />
         </div>
         <div className="flex items-center justify-end gap-6">
+          <ThemeToggle />
           <Link href="/docs" className={`${linkClass('/docs')} max-[519px]:hidden`}>Docs</Link>
           <button
             type="button"

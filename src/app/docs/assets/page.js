@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function AssetsPage() {
   return (
-    <div className="glass hairline rounded-2xl p-6">
+    <div className="rounded-2xl p-6">
       <h1 className="text-2xl font-semibold tracking-tight mb-3">Assets</h1>
       <div className="docs-prose">
         <p>Official Monswap assets for press, integrations, and partners.</p>

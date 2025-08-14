@@ -23,9 +23,9 @@ export default function DocsShell({ children }) {
   return (
     <div>
       <ScrollRestorer />
-      <div className="flex gap-8">
-        <div className="hidden xl:block sticky top-[7.5rem] self-start max-h-[calc(100vh-7.5rem)] overflow-auto scroll-y-subtle"><DocsSidebar /></div>
-        <div className="flex-1 min-w-0">
+      <div className="flex gap-8 h-[calc(100vh-9rem)] overflow-hidden">
+        <div className="hidden xl:block sticky top-[9rem] h-[calc(100vh-9rem)] overflow-auto"><DocsSidebar /></div>
+        <div className="flex-1 min-w-0 h-full overflow-auto">
           <div className="xl:hidden mb-4 hidden">
             <button className="px-3 py-2 rounded-full hairline hover:bg-white/5" onClick={() => setMobileOpen(true)}>Docs menu</button>
           </div>
@@ -34,11 +34,11 @@ export default function DocsShell({ children }) {
           <div id="docs-main" className="origin-top animate-fadein-500">
             {children}
           </div>
-          <div className="border-t border-white/10 mt-8 pt-6">
+          <div className="mt-8 pt-6">
             <DocNav />
           </div>
         </div>
-        <div className="hidden xl:block sticky top-[7.5rem] self-start max-h-[calc(100vh-7.5rem)] overflow-auto scroll-y-subtle"><RightToc /></div>
+        <div className="hidden xl:block sticky top-[9rem] h-[calc(100vh-9rem)] overflow-auto"><RightToc /></div>
       </div>
 
       {mobileOpen && (

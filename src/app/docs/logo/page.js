@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function LogoPage() {
   return (
-    <div className="glass hairline rounded-2xl p-6">
+    <div className="rounded-2xl p-6">
       <h1 className="text-2xl font-semibold tracking-tight mb-3">Logo</h1>
       <div className="docs-prose">
         <p>Use the primary logo on dark backgrounds. Maintain minimum width of 24px on digital.</p>

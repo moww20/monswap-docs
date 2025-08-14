@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function EmissionsPage() {
   return (
-    <div className="glass hairline rounded-2xl p-6">
+    <div className="rounded-2xl p-6">
       <h1 className="text-2xl font-semibold tracking-tight mb-3">Emissions</h1>
       <div className="docs-prose">
         <p><em>How emissions are allocated to voters and liquidity providers, and how rebases protect long‑term lockers.</em></p>
@@ -61,7 +61,7 @@ export default function EmissionsPage() {
           <li><strong>Staking and voting</strong> are foundational: earn via fees, bribes, and rebases while maintaining exposure to your principal and keeping capital working in‑protocol.</li>
         </ul>
       </div>
-      <div className="border-t border-white/10 mt-8 pt-6"></div>
+      <div className="mt-8 pt-6"></div>
     </div>
   )
 }

@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function IntroductionPage() {
   return (
-    <div className="glass hairline rounded-2xl p-6">
+    <div className="rounded-2xl p-6">
       <h1 className="text-2xl font-semibold tracking-tight mb-3">Introduction</h1>
       <div className="docs-prose">
         <p><em>Building durable liquidity and aligned incentives for Monad.</em></p>
@@ -79,7 +79,7 @@ export default function IntroductionPage() {
           the protocol seeks to cultivate deep, resilient liquidity and a healthier trading environment over the long run.
         </p>
       </div>
-      <div className="border-t border-white/10 mt-8 pt-6">
+      <div className="mt-8 pt-6">
         {/* Next/Prev navigation */}
         <div>
           {/* injected via DocNav component in layout */}

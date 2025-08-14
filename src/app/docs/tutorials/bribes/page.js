@@ -8,7 +8,7 @@ import DemoBribe from "../../components/demos/DemoBribe"
 
 export default function BribesTutorialPage() {
   return (
-    <div className="glass hairline rounded-2xl p-6">
+    <div className="rounded-2xl p-6">
       <h1 className="text-2xl font-semibold tracking-tight mb-3">Bribes Tutorial</h1>
       <div className="docs-prose">
         <ol>
@@ -25,7 +25,7 @@ export default function BribesTutorialPage() {
           <DemoBribe />
         </div>
       </div>
-      <div className="border-t border-white/10 mt-8 pt-6"></div>
+      <div className="mt-8 pt-6"></div>
     </div>
   )
 }

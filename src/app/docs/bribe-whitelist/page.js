@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function BribeWhitelistPage() {
   return (
-    <div className="glass hairline rounded-2xl p-6">
+    <div className="rounded-2xl p-6">
       <h1 className="text-2xl font-semibold tracking-tight mb-3">Bribe Whitelist</h1>
       <div className="docs-prose">
         <p><em>Which tokens can be used to bribe voters, and how new tokens are added.</em></p>
@@ -45,7 +45,7 @@ export default function BribeWhitelistPage() {
           <li>Request additions via Discord with token and plan details.</li>
         </ul>
       </div>
-      <div className="border-t border-white/10 mt-8 pt-6"></div>
+      <div className="mt-8 pt-6"></div>
     </div>
   )
 }
