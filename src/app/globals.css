@@ -127,6 +127,37 @@ body {
   max-width: 80ch;
   line-height: 1.7;
 }
+/* Search dropdown states for dark/light */
+.search-dropdown { background: #1e1f23; }
+html[data-theme='light'] .search-dropdown { background: #e7e9ee; }
+.search-item { background: transparent; transition: background-color 120ms ease; }
+.search-item:hover { background: rgba(255,255,255,0.08); }
+html[data-theme='light'] .search-item:hover { background: rgba(0,0,0,0.06); }
+.search-item.is-active { background: rgba(255,255,255,0.12); }
+html[data-theme='light'] .search-item.is-active { background: rgba(0,0,0,0.10); }
+
+/* TOC hover/active states */
+.toc-item { background: transparent; color: var(--color-foreground); transition: background-color 120ms ease; }
+.toc-item:hover { background: rgba(255,255,255,0.08); }
+html[data-theme='light'] .toc-item:hover { background: rgba(0,0,0,0.06); }
+.toc-item.is-active { background: rgba(255,255,255,0.12); }
+html[data-theme='light'] .toc-item.is-active { background: rgba(0,0,0,0.10); }
+
+/* Force-dark wrapper for demo cards so they remain readable in light mode */
+.force-dark {
+  color-scheme: dark;
+  --background: #0b0b0f;
+  --foreground: #e6e6e6;
+  --muted: #9aa0a6;
+  --hairline: rgba(255,255,255,0.08);
+  background: var(--background);
+  color: var(--foreground);
+}
+/* In light mode, use a slightly lighter dark backfill to reduce contrast */
+html[data-theme='light'] .force-dark {
+  background: #16181d; /* ~2 shades lighter than #0b0b0f */
+}
+
 .docs-prose p { margin: 0.75rem 0; }
 .docs-prose ul { margin: 0.75rem 0 0.75rem 1.25rem; list-style: disc; padding-left: 1.25rem; }
 .docs-prose ol { margin: 0.75rem 0 0.75rem 1.25rem; list-style: decimal; padding-left: 1.25rem; }
@@ -213,4 +244,16 @@ code {
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 8px;
   padding: 0.125rem 0.375rem;
+}
+
+/* Light mode: improve code block and inline code readability */
+html[data-theme='light'] pre {
+  background: #f3f4f6; /* light gray */
+  color: #0c0d10;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+html[data-theme='light'] code {
+  background: rgba(0,0,0,0.06);
+  color: #0c0d10;
+  border: 1px solid rgba(0,0,0,0.08);
 }

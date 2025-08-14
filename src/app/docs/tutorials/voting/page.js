@@ -4,6 +4,8 @@ export const metadata = {
   alternates: { canonical: "/docs/tutorials/voting" },
 }
 
+import DemoVoting from "../../components/demos/DemoVoting"
+
 export default function VotingTutorialPage() {
   return (
     <div className="rounded-2xl p-6">
@@ -15,9 +17,12 @@ export default function VotingTutorialPage() {
           <li>Confirm votes; re‑vote each epoch as allocations reset.</li>
         </ol>
         <h2>Interface preview</h2>
-        <p>Annotated screenshots of the voting flow will be included here.</p>
+        <p>Interactive demo preview of the voting flow.</p>
       </div>
-      <div className="mt-8 pt-6"></div>
+      <div className="mt-6 max-w-xl">
+        <div className="mb-2 text-sm text-[--color-muted]">Demo</div>
+        <DemoVoting />
+      </div>
     </div>
   )
 }

@@ -40,7 +40,7 @@ export default function RightToc() {
       <div className="mb-2 text-sm text-[--color-muted]">On this page</div>
       <nav className="grid gap-1 text-sm">
         {headings.map((h) => (
-          <a key={h.id} href={`#${h.id}`} className={`px-2 py-1 rounded-full hover:bg-white/5 ${active===h.id? 'bg-white/10' : ''}`}
+          <a key={h.id} href={`#${h.id}`} className={`toc-item px-2 py-1 rounded-full ${active===h.id? 'is-active' : ''}`}
             onClick={(e) => {
               e.preventDefault()
               const el = document.getElementById(h.id)

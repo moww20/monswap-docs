@@ -4,7 +4,7 @@ import BribeCard from "../../../components/BribeCard"
 
 export default function DemoBribe() {
   return (
-    <div className="max-w-lg mx-auto">
+    <div className="max-w-lg mx-auto force-dark rounded-2xl p-4">
       <BribeCard
         pair="ETH / MON"
         apr="—"

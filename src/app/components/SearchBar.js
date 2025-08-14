@@ -116,7 +116,7 @@ export default function SearchBar() {
         </span>
 
         {open && query && results.length > 0 && (
-          <div className="absolute left-0 right-0 mt-2 z-[60] rounded-xl bg-[#1e1f23] border border-white/10 shadow-xl overflow-hidden">
+          <div className="absolute left-0 right-0 mt-2 z-[60] rounded-xl border border-white/10 shadow-xl overflow-hidden bg-[#1e1f23] [html[data-theme='light']_&]:bg-[#e7e9ee] search-dropdown">
             <ul className="py-1 max-h-72 overflow-auto">
               {results.map((res, idx) => {
                 const section = hrefToSection.get(res.href)
@@ -124,7 +124,7 @@ export default function SearchBar() {
                 return (
                   <li key={res.href}>
                     <button
-                      className={`w-full text-left px-3 py-2 text-sm ${isActive ? "bg-white/10" : "hover:bg-white/5"}`}
+                      className={`w-full text-left px-3 py-2 text-sm search-item ${isActive ? "is-active" : ""}`}
                       onMouseEnter={() => setActiveIndex(idx)}
                       onMouseDown={(e) => e.preventDefault()}
                       onClick={() => onSelect(res.href)}

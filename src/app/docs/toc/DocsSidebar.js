@@ -54,7 +54,7 @@ export default function DocsSidebar() {
                     const active = pathname.startsWith(item.href)
                     return (
                       <Link key={item.href} href={item.href}
-                        className={`px-3 py-1.5 rounded-full text-sm transition ${active ? "bg-white/10 text-foreground" : "text-foreground/90 hover:bg-white/5"}`}>
+                        className={`toc-item px-3 py-1.5 rounded-full text-sm ${active ? "is-active" : ""}`}>
                         {item.label}
                       </Link>
                     )
