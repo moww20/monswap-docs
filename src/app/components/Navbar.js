@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation"
 // Connect button removed from header per request
 import SearchBar from "./SearchBar"
 import ThemeToggle from "./ThemeToggle"
+import { siX, siDiscord } from "simple-icons"
 
 export default function Navbar() {
   const pathname = usePathname()
@@ -55,8 +56,8 @@ export default function Navbar() {
             aria-label="X (Twitter)"
             className="inline-flex items-center justify-center w-9 h-9 rounded-full hover:bg-white/5 text-foreground/90"
           >
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 4l16 16M20 4L4 20" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <path d={siX.path} />
             </svg>
           </a>
           <a
@@ -66,10 +67,8 @@ export default function Navbar() {
             aria-label="Discord"
             className="inline-flex items-center justify-center w-9 h-9 rounded-full hover:bg-white/5 text-foreground/90"
           >
-            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="8.5" cy="10" r="1.2" fill="currentColor" />
-              <circle cx="15.5" cy="10" r="1.2" fill="currentColor" />
-              <path d="M4.5 16c2.5-2 12.5-2 15 0M6 7c3-2 9-2 12 0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
+            <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <path d={siDiscord.path} />
             </svg>
           </a>
           <ThemeToggle />
@@ -123,10 +122,10 @@ export default function Navbar() {
                     <Link href="/docs" className={linkClass('/docs')}>Docs</Link>
                     <div className="flex items-center gap-3 pt-2">
                       <a href="https://x.com/monswapapp" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="inline-flex items-center justify-center w-9 h-9 rounded-full hover:bg-white/5 text-foreground/90">
-                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" /></svg>
+                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d={siX.path} /></svg>
                       </a>
                       <a href="https://discord.com/invite/QnrjnCyU7Q" target="_blank" rel="noopener noreferrer" aria-label="Discord" className="inline-flex items-center justify-center w-9 h-9 rounded-full hover:bg-white/5 text-foreground/90">
-                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8.5" cy="10" r="1.2" fill="currentColor" /><circle cx="15.5" cy="10" r="1.2" fill="currentColor" /><path d="M4.5 16c2.5-2 12.5-2 15 0M6 7c3-2 9-2 12 0" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" /></svg>
+                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" role="img" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path d={siDiscord.path} /></svg>
                       </a>
                     </div>
                   </div>
