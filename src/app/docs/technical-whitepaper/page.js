@@ -9,6 +9,7 @@ export default function TechnicalWhitepaperPage() {
     <div className="rounded-2xl p-6">
       <h1 className="text-2xl font-semibold tracking-tight mb-3">Technical Whitepaper</h1>
       <div className="docs-prose">
+        <h2>Overview</h2>
         <p>Formal specification of the protocol, core algorithms, and security considerations.</p>
       </div>
     </div>

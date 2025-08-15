@@ -9,7 +9,9 @@ export default function AssetsPage() {
     <div className="rounded-2xl p-6">
       <h1 className="text-2xl font-semibold tracking-tight mb-3">Assets</h1>
       <div className="docs-prose">
+        <h2>Overview</h2>
         <p>Official Monswap assets for press, integrations, and partners.</p>
+        <h3>Downloads</h3>
         <ul>
           <li><a href="/mon-2.svg" download>Logo (SVG)</a></li>
           <li><a href="/monswaplogo.png" download>Logo (PNG)</a></li>

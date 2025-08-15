@@ -9,6 +9,7 @@ export default function OfficialLinksPage() {
     <div className="rounded-2xl p-6">
       <h1 className="text-2xl font-semibold tracking-tight mb-3">Official Links</h1>
       <div className="docs-prose">
+        <h2>Links</h2>
         <ul>
           <li>
             Website: {" "}
