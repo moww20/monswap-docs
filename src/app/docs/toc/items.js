@@ -37,6 +37,14 @@ export const docsItems = [
       { href: "/docs/tutorials/bribes", label: "Bribes Tutorial", description: "Post and claim bribes effectively." },
     ],
   },
+  {
+    label: "Legal & Privacy",
+    children: [
+      { href: "/docs/privacy-policy", label: "Privacy Policy", description: "Data collection, usage, and choices." },
+      { href: "/docs/trademark-policy", label: "Trademark Policy", description: "Using the Monswap name and marks." },
+      { href: "/docs/licensing", label: "Licensing", description: "Code, content, and dependencies." },
+    ],
+  },
 ]
 
 // Flattened list for next/prev ordering
