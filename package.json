@@ -9,15 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/drei": "^10.6.1",
-    "@react-three/fiber": "^9.3.0",
     "framer-motion": "^12.23.12",
     "lightweight-charts": "^5.0.8",
     "next": "15.4.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "simple-icons": "^14.15.0",
-    "three": "^0.179.1"
+    "simple-icons": "^14.15.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
