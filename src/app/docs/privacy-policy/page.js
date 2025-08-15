@@ -30,10 +30,10 @@ export default function PrivacyPolicyPage() {
           <li>Understand feature adoption in aggregate to guide development priorities.</li>
         </ul>
 
-        <h2>Cookies and analytics</h2>
+        <h2>Cookies</h2>
         <p>
-          We may use minimal cookies or similar technologies to keep basic preferences and facilitate
-          session behavior. Any analytics is aggregated and de‑identified where feasible.
+          We do not use cookies. Certain UI preferences may be stored locally in your browser (e.g.,
+          localStorage) and are not transmitted to our servers.
         </p>
 
         <h2>Third‑party services</h2>
@@ -44,7 +44,7 @@ export default function PrivacyPolicyPage() {
 
         <h2>Your choices</h2>
         <ul>
-          <li>Use privacy‑preserving browsers or disable cookies where appropriate.</li>
+          <li>Use privacy‑preserving browsers and limit optional data where appropriate.</li>
           <li>Limit the information you provide through optional inputs.</li>
           <li>Review third‑party settings for additional controls.</li>
         </ul>
