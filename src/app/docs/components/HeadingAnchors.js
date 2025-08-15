@@ -19,7 +19,20 @@ export default function HeadingAnchors() {
         btn.setAttribute("data-anchor-btn", "")
         btn.setAttribute("aria-label", "Copy link to heading")
         btn.className = "absolute right-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition text-[--color-muted] hover:text-foreground"
-        btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 14l4-4m-7 7a4 4 0 010-6l1-1m8 8a4 4 0 010-6l-1-1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+        const svgNS = "http://www.w3.org/2000/svg"
+        const svg = document.createElementNS(svgNS, "svg")
+        svg.setAttribute("width", "16")
+        svg.setAttribute("height", "16")
+        svg.setAttribute("viewBox", "0 0 24 24")
+        svg.setAttribute("fill", "none")
+        const path = document.createElementNS(svgNS, "path")
+        path.setAttribute("d", "M10 14l4-4m-7 7a4 4 0 010-6l1-1m8 8a4 4 0 010-6l-1-1")
+        path.setAttribute("stroke", "currentColor")
+        path.setAttribute("stroke-width", "1.6")
+        path.setAttribute("stroke-linecap", "round")
+        path.setAttribute("stroke-linejoin", "round")
+        svg.appendChild(path)
+        btn.appendChild(svg)
         btn.addEventListener("click", async (e) => {
           e.preventDefault()
           const url = `${location.origin}${location.pathname}#${h.id}`

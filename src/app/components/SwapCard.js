@@ -299,12 +299,12 @@ export default function SwapCard({
 
       <div className="px-4 pb-4">
         <div className="relative">
-          <AmountRow
-            title={tab === "Sell" ? "Sell" : "Sell"}
-            amount={sellAmount}
-            setAmount={setSellAmount}
-            token={sellToken}
-            onSelectToken={() => { if (tokens.length) setTokenMenu('sell') }}
+           <AmountRow
+                          title="Sell"
+             amount={sellAmount}
+             setAmount={setSellAmount}
+             token={sellToken}
+onSelectToken={() => { if (tokens.length) setTokenMenu('sell') }}
             usdPreview={sellUsd}
             isMenuOpen={tokenMenu==='sell'}
             tokens={tokens}
@@ -317,20 +317,21 @@ export default function SwapCard({
           <button
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 p-2 rounded-xl bg-white/5 hover:bg-white/10 transition hairline shadow-sm"
             aria-label="Switch tokens"
+            onClick={() => { setSellToken(buyToken); setBuyToken(sellToken); setSellAmount(buyAmount) }}
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M12 16V4m0 0l-3.5 3.5M12 4l3.5 3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
               <path d="M12 8v12m0 0l3.5-3.5M12 20l-3.5-3.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
             </svg>
-          </button>
+                     </button>
 
-          <AmountRow
-            className="mt-1"
-            title={tab === "Buy" ? "Buy" : "Buy"}
-            amount={buyAmount}
-            setAmount={setBuyAmount}
-            token={buyToken}
-            onSelectToken={() => { if (tokens.length) setTokenMenu('buy') }}
+            <AmountRow
+             className="mt-1"
+                          title="Buy"
+             amount={buyAmount}
+             setAmount={setBuyAmount}
+             token={buyToken}
+onSelectToken={() => { if (tokens.length) setTokenMenu('buy') }}
             usdPreview={buyUsd}
             isMenuOpen={tokenMenu==='buy'}
             tokens={tokens}

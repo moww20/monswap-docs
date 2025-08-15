@@ -60,13 +60,14 @@ export default function ChartPanel({ height, useMock = true, pair = "ETH/USDT" }
     }
 
     const load = async () => {
+      if (!chartRef.current || !seriesRef.current) return
       if (useMock) {
         const pts = generateMock24hHourly()
-        areaSeries.setData(pts)
+        seriesRef.current.setData(pts)
         // Default to 1D visible range (last 24h ending at the current local hour)
-        chart.priceScale('right').applyOptions({ mode: PriceScaleMode.Normal })
+        chartRef.current.priceScale('right').applyOptions({ mode: PriceScaleMode.Normal })
         const lastTs = pts[pts.length - 1]?.time || Math.floor(Date.now() / 1000)
-        chart.timeScale().applyOptions({
+        chartRef.current.timeScale().applyOptions({
           timeVisible: true,
           secondsVisible: false,
           tickMarkFormatter: (time) => {
@@ -87,45 +88,45 @@ export default function ChartPanel({ height, useMock = true, pair = "ETH/USDT" }
             return d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', hour12: false })
           },
         })
-        chart.timeScale().setVisibleRange({ from: lastTs - 24 * 3600, to: lastTs })
-        return
+        chartRef.current.timeScale().setVisibleRange({ from: lastTs - 24 * 3600, to: lastTs })
+      } else {
+        try {
+          const res = await fetch(
+            "https://api.coingecko.com/api/v3/coins/ethereum/market_chart?vs_currency=usd&days=1&interval=hourly",
+            { cache: "no-store" }
+          )
+          const data = await res.json()
+          const points = (data?.prices || []).map(([ts, price]) => ({ time: Math.floor(ts / 1000), value: price }))
+          seriesRef.current.setData(points)
+          // Apply 1D formatting and range by default for real data
+          chartRef.current.priceScale('right').applyOptions({ mode: PriceScaleMode.Normal })
+          chartRef.current.timeScale().applyOptions({
+            timeVisible: true,
+            secondsVisible: false,
+            tickMarkFormatter: (time) => {
+              let d
+              if (typeof time === 'number') {
+                d = new Date(time * 1000)
+              } else if (time && typeof time === 'object' && 'year' in time) {
+                d = new Date(time.year, (time.month || 1) - 1, time.day || 1)
+              } else {
+                return ''
+              }
+              const minutes = d.getMinutes()
+              if (minutes !== 0) return ''
+              const hoursLocal = d.getHours()
+              if (hoursLocal === 0) {
+                return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
+              }
+              return d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', hour12: false })
+            },
+          })
+          const tsNow = Math.floor(Date.now() / 1000)
+          const tzOffsetSec = new Date().getTimezoneOffset() * 60
+          const endAlignedLocal = Math.floor((tsNow - tzOffsetSec) / 3600) * 3600 + tzOffsetSec
+          chartRef.current.timeScale().setVisibleRange({ from: endAlignedLocal - 24 * 3600, to: endAlignedLocal })
+        } catch {}
       }
-      try {
-        const res = await fetch(
-          "https://api.coingecko.com/api/v3/coins/ethereum/market_chart?vs_currency=usd&days=1&interval=hourly",
-          { cache: "no-store" }
-        )
-        const data = await res.json()
-        const points = (data?.prices || []).map(([ts, price]) => ({ time: Math.floor(ts / 1000), value: price }))
-        areaSeries.setData(points)
-        // Apply 1D formatting and range by default for real data
-        chart.priceScale('right').applyOptions({ mode: PriceScaleMode.Normal })
-        chart.timeScale().applyOptions({
-          timeVisible: true,
-          secondsVisible: false,
-          tickMarkFormatter: (time) => {
-            let d
-            if (typeof time === 'number') {
-              d = new Date(time * 1000)
-            } else if (time && typeof time === 'object' && 'year' in time) {
-              d = new Date(time.year, (time.month || 1) - 1, time.day || 1)
-            } else {
-              return ''
-            }
-            const minutes = d.getMinutes()
-            if (minutes !== 0) return ''
-            const hoursLocal = d.getHours()
-            if (hoursLocal === 0) {
-              return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
-            }
-            return d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit', hour12: false })
-          },
-        })
-        const tsNow = Math.floor(Date.now() / 1000)
-        const tzOffsetSec = new Date().getTimezoneOffset() * 60
-        const endAlignedLocal = Math.floor((tsNow - tzOffsetSec) / 3600) * 3600 + tzOffsetSec
-        chart.timeScale().setVisibleRange({ from: endAlignedLocal - 24 * 3600, to: endAlignedLocal })
-      } catch {}
     }
     load()
 
@@ -133,11 +134,11 @@ export default function ChartPanel({ height, useMock = true, pair = "ETH/USDT" }
 
     const onRange = (ev) => {
       const { hours } = ev.detail || {}
-      if (!hours) return
+      if (!hours || !chartRef.current) return
       const ts = Math.floor(Date.now() / 1000)
       // Switch x-axis label style based on intraday vs multi-day
       if (hours === 24) {
-        chart.timeScale().applyOptions({
+        chartRef.current.timeScale().applyOptions({
           timeVisible: true,
           secondsVisible: false,
           tickMarkFormatter: (time) => {
@@ -160,7 +161,7 @@ export default function ChartPanel({ height, useMock = true, pair = "ETH/USDT" }
           },
         })
       } else if (hours <= 6) {
-        chart.timeScale().applyOptions({
+        chartRef.current.timeScale().applyOptions({
           timeVisible: true,
           secondsVisible: false,
           tickMarkFormatter: (time /* Time */, tickMarkType, locale) => {
@@ -179,7 +180,7 @@ export default function ChartPanel({ height, useMock = true, pair = "ETH/USDT" }
           },
         })
       } else {
-        chart.timeScale().applyOptions({
+        chartRef.current.timeScale().applyOptions({
           timeVisible: false,
           secondsVisible: false,
           tickMarkFormatter: (time /* Time */) => {
@@ -200,24 +201,26 @@ export default function ChartPanel({ height, useMock = true, pair = "ETH/USDT" }
         // For 1D, align to the current local hour and show last 24 full hours
         const tzOffsetSec = new Date().getTimezoneOffset() * 60
         const endAlignedLocal = Math.floor((ts - tzOffsetSec) / 3600) * 3600 + tzOffsetSec
-        chart.timeScale().setVisibleRange({ from: endAlignedLocal - hours * 3600, to: endAlignedLocal })
+        chartRef.current.timeScale().setVisibleRange({ from: endAlignedLocal - hours * 3600, to: endAlignedLocal })
       } else if (hours <= 6) {
         const tzOffsetSec = new Date().getTimezoneOffset() * 60
         const endAlignedLocal = Math.floor((ts - tzOffsetSec) / 3600) * 3600 + tzOffsetSec
-        chart.timeScale().setVisibleRange({ from: endAlignedLocal - hours * 3600, to: endAlignedLocal })
+        chartRef.current.timeScale().setVisibleRange({ from: endAlignedLocal - hours * 3600, to: endAlignedLocal })
       } else {
-        chart.timeScale().setVisibleRange({ from: ts - hours * 3600, to: ts })
+        chartRef.current.timeScale().setVisibleRange({ from: ts - hours * 3600, to: ts })
       }
     }
     const onScale = (ev) => {
       const { mode } = ev.detail || {}
-      const ps = chart.priceScale('right')
+      if (!chartRef.current) return
+      const ps = chartRef.current.priceScale('right')
       if (mode === 'linear') ps.applyOptions({ mode: PriceScaleMode.Normal })
       if (mode === 'log') ps.applyOptions({ mode: PriceScaleMode.Logarithmic })
     }
     const onPriceMode = (ev) => {
       const { kind } = ev.detail || {}
-      const ps = chart.priceScale('right')
+      if (!chartRef.current) return
+      const ps = chartRef.current.priceScale('right')
       if (kind === 'price') ps.applyOptions({ mode: PriceScaleMode.Normal })
       if (kind === 'percent') ps.applyOptions({ mode: PriceScaleMode.Percentage })
       if (kind === 'index') ps.applyOptions({ mode: PriceScaleMode.IndexedTo100 })
@@ -231,6 +234,14 @@ export default function ChartPanel({ height, useMock = true, pair = "ETH/USDT" }
       window.removeEventListener('monswap:chart-scale', onScale)
       window.removeEventListener('monswap:chart-priceMode', onPriceMode)
       chart.remove()
+      chartRef.current = null
+      seriesRef.current = null
+    }
+  }, [])
+
+  useEffect(() => {
+    if (chartRef.current) {
+      chartRef.current.applyOptions({ height: plotHeight })
     }
   }, [plotHeight])
 
