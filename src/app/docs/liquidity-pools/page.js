@@ -72,7 +72,6 @@ export default function LiquidityPoolsPage() {
           <li>Fees: Stable pools <strong>0.03%</strong>, Volatile pools <strong>0.30%</strong>.</li>
         </ul>
       </div>
-      <div className="mt-8 pt-6"></div>
     </div>
   )
 }

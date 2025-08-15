@@ -45,7 +45,6 @@ export default function BribeWhitelistPage() {
           <li>Request additions via Discord with token and plan details.</li>
         </ul>
       </div>
-      <div className="mt-8 pt-6"></div>
     </div>
   )
 }

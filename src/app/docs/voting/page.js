@@ -60,7 +60,6 @@ export default function VotingDocsPage() {
           <li>Voting rewards settle in the next epoch; your lock is represented by a veNFT.</li>
         </ul>
       </div>
-      <div className="mt-8 pt-6"></div>
     </div>
   )
 }

@@ -2,7 +2,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 
 export const metadata = {
-  title: "monswap-docs",
+  title: "MONSWAP Docs",
   description: "A premium, high‑performance decentralized exchange for the Monad ecosystem.",
   icons: {
     icon: "/mon-2.svg",

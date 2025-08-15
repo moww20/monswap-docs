@@ -1,23 +1,23 @@
 import DocsShell from "./DocsShell"
 
 export const metadata = {
-  title: "monswap-docs",
-  description: "Documentation for monswap.",
+  title: "MONSWAP Docs",
+  description: "Documentation for MONSWAP.",
   openGraph: {
-    title: "monswap-docs",
-    description: "Documentation for monswap.",
+    title: "MONSWAP Docs",
+    description: "Documentation for MONSWAP.",
     url: "/docs",
-    siteName: "monswap-docs",
+    siteName: "MONSWAP Docs",
     images: [
-      { url: "/mon-2.svg", width: 1200, height: 630, alt: "monswap" },
+      { url: "/mon-2.svg", width: 1200, height: 630, alt: "MONSWAP" },
     ],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "monswap-docs",
-    description: "Documentation for monswap.",
+    title: "MONSWAP Docs",
+    description: "Documentation for MONSWAP.",
     images: ["/mon-2.svg"],
   },
 }
