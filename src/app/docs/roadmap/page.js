@@ -9,43 +9,55 @@ export default function RoadmapPage() {
     <div className="rounded-2xl p-6">
       <h1 className="text-2xl font-semibold tracking-tight mb-3">Roadmap</h1>
       <div className="docs-prose">
-        <h2>Approach</h2>
+        <h2>Overview</h2>
         <p>
-          There’s more we’d love to share—but we’d rather under‑promise and over‑deliver. That said,
-          here’s what to expect in the coming days and months.
+          We prefer to under‑promise and over‑deliver. The plan below outlines the near‑term sequence
+          we are working toward. Ordering and scope may adjust based on audit outcomes and user feedback.
         </p>
 
-        <h2>Our rough roadmap</h2>
+        <h2>Milestones</h2>
 
-        <h3>1️⃣ Twitter/X Marketing Campaign</h3>
-        <p>The goal is to grow our reach so momentum can snowball organically.</p>
-        <p>We will be running an exclusive NFT mint on testnet.</p>
-        <h3>NFT Collection 1: Pixel Monsters</h3>
+        <h3>1. Marketing and community growth</h3>
+        <p>
+          A focused Twitter/X campaign to expand reach and prime distribution for launch. During this
+          phase we will run an exclusive testnet NFT mint.
+        </p>
+        <p><strong>Pixel Monsters (testnet)</strong></p>
         <ul>
-          <li>✔️ Limited 333 unique Monsters</li>
-          <li>✔️ Guaranteed allowlist (GTD WL)</li>
-          <li>✔️ First‑come‑first‑serve allowlist (FCFS WL)</li>
+          <li>Limited to 333 unique monsters</li>
+          <li>Guaranteed allowlist (GTD WL)</li>
+          <li>First‑come‑first‑serve allowlist (FCFS WL)</li>
         </ul>
-        <p><em>Note:</em> We are a DeFi project and plan to release a maximum of three collections
-          as part of our community expansion campaign.</p>
+        <p>
+          Note: Monswap is a DeFi project. At most three collections are planned as part of the
+          community expansion campaign.
+        </p>
 
-        <h3>2️⃣ VeDEX launch on testnet (≈ 1 month)</h3>
-        <p>Testnet deployment to validate core flows, gather feedback, and prepare for mainnet.</p>
+        <h3>2. veDEX testnet launch (≈ 1 month)</h3>
+        <p>
+          Public testnet deployment to validate core flows, gather feedback, and prepare for mainnet.
+        </p>
 
-        <h3>3️⃣ Fundraising for LP</h3>
-        <p>Liquidity provisioning raises to deepen pairs and improve routing efficiency.
-           Whitelisting details will be shared closer to launch.</p>
+        <h3>3. Liquidity provisioning</h3>
+        <p>
+          Fundraising focused on deepening liquidity for key pairs and improving routing efficiency.
+          Whitelisting details will be shared closer to launch.
+        </p>
 
-        <h3>4️⃣ Smart contract audit + whitepaper finalization</h3>
-        <p>Security review and formalization of the final protocol specification.</p>
+        <h3>4. Security review and whitepaper finalization</h3>
+        <p>
+          Smart contract audit and finalization of the protocol specification.
+        </p>
 
-        <h3>5️⃣ Official mainnet launch</h3>
-        <p>Progressive rollout with safeguards, monitoring, and post‑launch iteration.</p>
+        <h3>5. Mainnet launch</h3>
+        <p>
+          Progressive rollout with safeguards, monitoring, and iteration informed by early usage.
+        </p>
 
         <h2>Status</h2>
         <p>
-          The frontend is ~80% complete and will iterate further once everything is hooked up and
-          we gather user feedback.
+          The frontend is approximately 80% complete. We will iterate further once on‑chain components
+          are integrated and we collect real user feedback.
         </p>
       </div>
     </div>
