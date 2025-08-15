@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 export const metadata = {
   title: "MONSWAP Docs",
   description: "A premium, high‑performance decentralized exchange for the Monad ecosystem.",
+  metadataBase: new URL("https://docs.monswap.app"),
   icons: {
     icon: "/mon-2.svg",
     shortcut: "/mon-2.svg",
