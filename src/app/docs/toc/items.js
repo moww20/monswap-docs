@@ -20,16 +20,12 @@ export const docsItems = [
     label: "Project",
     children: [
       { href: "/docs/roadmap", label: "Roadmap", description: "Planned milestones and features." },
-      { href: "/docs/official-links", label: "Official Links", description: "Verified official links and communities." },
-      { href: "/docs/technical-whitepaper", label: "Technical Whitepaper", description: "Formal specification and security notes." },
     ],
   },
   {
     label: "Brand",
     children: [
-      { href: "/docs/assets", label: "Assets", description: "Downloadable logos and visual assets." },
-      { href: "/docs/brand-guides", label: "Brand Guides", description: "Usage, colors, spacing, and do/don'ts." },
-      { href: "/docs/logo", label: "Logo", description: "Logo formats, clearspace, and sizing guidance." },
+      { href: "/docs/brand-guides", label: "Brand", description: "Brand guidelines, logo usage, and downloadable assets." },
     ],
   },
   {
