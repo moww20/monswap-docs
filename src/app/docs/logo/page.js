@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Logo — monswap-docs",
+  title: "Logo — MONSWAP Docs",
   description: "Logo formats, clearspace, and sizing guidance.",
   alternates: { canonical: "/docs/logo" },
 }

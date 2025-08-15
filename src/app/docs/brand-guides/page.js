@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Brand Guides — monswap-docs",
+  title: "Brand Guides — MONSWAP Docs",
   description: "Brand usage, colors, spacing, and typography.",
   alternates: { canonical: "/docs/brand-guides" },
 }

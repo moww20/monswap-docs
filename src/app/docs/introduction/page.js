@@ -79,12 +79,7 @@ export default function IntroductionPage() {
           the protocol seeks to cultivate deep, resilient liquidity and a healthier trading environment over the long run.
         </p>
       </div>
-      <div className="mt-8 pt-6">
-        {/* Next/Prev navigation */}
-        <div>
-          {/* injected via DocNav component in layout */}
-        </div>
-      </div>
+
     </div>
   )
 }

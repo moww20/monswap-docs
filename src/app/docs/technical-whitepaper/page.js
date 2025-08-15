@@ -11,7 +11,6 @@ export default function TechnicalWhitepaperPage() {
       <div className="docs-prose">
         <p>Formal specification of the protocol, core algorithms, and security considerations.</p>
       </div>
-      <div className="mt-8 pt-6"></div>
     </div>
   )
 }

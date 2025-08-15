@@ -22,7 +22,6 @@ export default function AddLiquidityTutorialPage() {
           <DemoAddLiquidity />
         </div>
       </div>
-      <div className="mt-8 pt-6"></div>
     </div>
   )
 }

@@ -11,7 +11,6 @@ export default function RoadmapPage() {
       <div className="docs-prose">
         <p>High‑level milestones and planned features. Timeline is subject to change.</p>
       </div>
-      <div className="mt-8 pt-6"></div>
     </div>
   )
 }

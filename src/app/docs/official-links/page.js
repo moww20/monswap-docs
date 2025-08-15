@@ -33,7 +33,6 @@ export default function OfficialLinksPage() {
           </li>
         </ul>
       </div>
-      <div className="mt-8 pt-6"></div>
     </div>
   )
 }

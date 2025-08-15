@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Assets — monswap-docs",
+  title: "Assets — MONSWAP Docs",
   description: "Download official Monswap logos and visual assets.",
   alternates: { canonical: "/docs/assets" },
 }

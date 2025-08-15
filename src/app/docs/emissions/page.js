@@ -61,7 +61,6 @@ export default function EmissionsPage() {
           <li><strong>Staking and voting</strong> are foundational: earn via fees, bribes, and rebases while maintaining exposure to your principal and keeping capital working in‑protocol.</li>
         </ul>
       </div>
-      <div className="mt-8 pt-6"></div>
     </div>
   )
 }

@@ -67,7 +67,6 @@ export default function FeesAndBribesPage() {
           <li>Rebases help protect ve‑lock holders from dilution; they accrue and must be claimed.</li>
         </ul>
       </div>
-      <div className="mt-8 pt-6"></div>
     </div>
   )
 }
