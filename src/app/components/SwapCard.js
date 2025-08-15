@@ -1,6 +1,6 @@
 "use client"
 
- import { useState, useEffect, useRef } from "react"
+ import { useState, useEffect, useRef, useCallback } from "react"
 import { motion } from "framer-motion"
 
 const tabs = ["Swap", "Limit", "Buy", "Sell"]
@@ -138,14 +138,14 @@ export default function SwapCard({
 
   const SETTINGS_KEY = "monswap.settings"
 
-  const saveSettings = () => {
+  const saveSettings = useCallback(() => {
     try {
       localStorage.setItem(
         SETTINGS_KEY,
         JSON.stringify({ maxSlippage, slippageAuto, deadlineMins, mode })
       )
     } catch {}
-  }
+  }, [SETTINGS_KEY, maxSlippage, slippageAuto, deadlineMins, mode])
 
   useEffect(() => {
     try {
@@ -173,7 +173,7 @@ export default function SwapCard({
     }
     document.addEventListener("mousedown", onDocDown)
     return () => document.removeEventListener("mousedown", onDocDown)
-  }, [settingsOpen, maxSlippage, slippageAuto, deadlineMins, mode])
+  }, [settingsOpen, maxSlippage, slippageAuto, deadlineMins, mode, saveSettings])
 
   const handleToggleSettings = () => {
     if (settingsOpen) saveSettings()
